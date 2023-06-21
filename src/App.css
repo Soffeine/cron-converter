@@ -5,16 +5,94 @@
 
 .schedule {
   margin: auto;
-  border: 1px solid violet;
   width: 70%;
   min-height: 500px;
   width: 70%;
+  border: 1px solid #c09576;
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.fields {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.radio-inputs {
+  width: 50%;
+  height: 250px;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: 20px;
+}
+
+.writing-inputs {
+  width: 50%;
+  height: 250px;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: flex-end;
+}
+
+.input {
+  background: transparent;
+  border: 1px solid #c09576;
+  color: #c09576;
+  border-radius: 5px;
+  min-height: 25px;
+  margin: 0 20px;
+}
+
+.select {
+  width: 180px;
+  background: transparent;
+  border: 1px solid #c09576;
+  color: #c09576;
 }
 
 .time-setter {
-  width: 30%;
+  display: flex;
+  width: 270px;
+  min-height: 150px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.buttons {
+  width: 100%;
+  margin: 20px auto 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: 1px solid salmon;
+  margin-bottom: 50px;
 }
+
+.button {
+  min-width: 80px;
+  min-height: 40px;
+  cursor: pointer;
+  border: 1px solid #c09576;
+  border-radius: 10px;
+  color: #c09576;
+  font-size: 25px;
+  background: transparent;
+}
+
+.cron-input {
+  width: 90%;
+  min-height: 40px;
+  font-size: 30px;
+  margin: auto;
+}
+

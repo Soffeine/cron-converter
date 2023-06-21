@@ -54,35 +54,55 @@ function App() {
     <div className="App">
       <section className='schedule'>
         <form className='form'>
-          <div className='radio-inputs'>
-            <input type='radio' name='choice' value="monthly" id="monthly" />
-            <input type='radio' name='choice' value="weekly" id="weekly" />
-            <input type='radio' name='choice' value="daily" id="daily" />
-            <input type='radio' name='choice' value="custom" id="custom" />
-          </div>
-          <div className='writing inputs'>
-            <select>
-              <option>Monday</option>
-              <option>Tuesday</option>
-              <option>Wednesday</option>
-              <option>Thursday</option>
-              <option>Friday</option>
-              <option>Saturday</option>
-              <option>Sunday</option>
-            </select>
-            <div className='time-setter'>
-              <input type='text' value={time} onChange={onTimeChange} className="time-setter__input" />
-              <input type='number' value={timeInterval} onChange={(e) => setTimeInterval(e.target.value)} />
+          <div className='fields'>
+            <div className='radio-inputs'>
+              <label className='label'>
+                <input type='radio' name='choice' value="monthly" id="monthly" />
+                Monthly
+              </label>
+              <label className='label'>
+                <input type='radio' name='choice' value="weekly" id="weekly" />
+                Weekly
+              </label>
+              <label className='label'>
+                <input type='radio' name='choice' value="daily" id="daily" />
+                Daily
+              </label>
+              <label className='label'>
+                <input type='radio' name='choice' value="custom" id="custom" className='checkbox' />
+                Custom
+              </label>
+            </div>
+            <div className='writing-inputs'>
+              <select className='select'>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+              </select>
+              <div className='time-setter'>
+                <label className='label time-label'>
+                  At
+                  <input type='text' value={time} onChange={onTimeChange} className="input" />
+                </label>
+                <label className='label time-label'>
+                  <input type='number' value={timeInterval} onChange={(e) => setTimeInterval(e.target.value)} className='input' />
+                  minutes
+                </label>
 
+
+              </div>
             </div>
           </div>
           <div className='buttons'>
-            <button />
-            <button />
+            <button type='button' className='button'>Load</button>
+            <button type='submit' className='button'>Save</button>
           </div>
-          <input type='text' value={cronValue} className='input' onChange={(e) => setCronValue(e.target.value)}/>
+          <input type='text' value={cronValue} className='input cron-input' onChange={(e) => setCronValue(e.target.value)} />
         </form>
-        <div className='inputs'></div>
       </section>
     </div>
   );
