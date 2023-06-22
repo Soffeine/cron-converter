@@ -1,0 +1,45 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.fields {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.input {
+    background: transparent;
+    border: 1px solid #c09576;
+    color: #c09576;
+    border-radius: 5px;
+    min-height: 25px;
+    margin: 0 20px;
+}
+
+.buttons {
+    width: 100%;
+    margin: 20px auto 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.button {
+    min-width: 80px;
+    min-height: 40px;
+    cursor: pointer;
+    border: 1px solid #c09576;
+    border-radius: 10px;
+    color: #c09576;
+    font-size: 25px;
+    background: transparent;
+}
+
+.cron-input {
+    width: 90%;
+    min-height: 40px;
+    font-size: 30px;
+    margin: auto;
+}

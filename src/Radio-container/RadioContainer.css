@@ -1,0 +1,22 @@
+.radio-inputs {
+    width: 50%;
+    height: 250px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .label {
+    font-size: 20px;
+  }
+  
+  .writing-inputs {
+    width: 50%;
+    height: 250px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: flex-end;
+  }

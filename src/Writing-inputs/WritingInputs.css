@@ -1,0 +1,14 @@
+.select {
+    width: 180px;
+    background: transparent;
+    border: 1px solid #c09576;
+    color: #c09576;
+}
+
+.time-setter {
+    display: flex;
+    width: 270px;
+    min-height: 150px;
+    flex-direction: column;
+    justify-content: space-around;
+}
