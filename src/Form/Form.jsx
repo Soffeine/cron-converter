@@ -6,7 +6,6 @@ import ButtonsContainer from "../Buttons/ButtonsContainer";
 
 function Form() {
     const [period, setPeriod] = useState('');
-    const [day, setDay] = useState('');
     const [time, setTime] = useState('');
     const [timeInterval, setTimeInterval] = useState(null);
     const [cronValue, setCronValue] = useState('');
@@ -14,11 +13,6 @@ function Form() {
      // изменение значения периода времени
     const onPeriodChange = (e) => {
         setPeriod(e.target.value);
-    }
-
-    // изменение значения дня недели
-    const onDayChange = (e) => {
-        setDay(e.target.value);
     }
 
     // изменение значения времени
@@ -66,10 +60,9 @@ function Form() {
         <form className='form'>
             <div className='fields'>
                 <RadioContainer onPeriodChange={onPeriodChange} />
-                <WritingInputs day={day}
+                <WritingInputs 
                 time={time}
                 timeInterval={timeInterval}
-                onDayChange={onDayChange}
                 onTimeChange={onTimeChange}
                 onTimeIntevalChange={onTimeIntervalChange} />
             </div>
