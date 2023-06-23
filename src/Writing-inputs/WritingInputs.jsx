@@ -49,7 +49,7 @@ function WritingInputs() {
                 <option value='Saturday'>Saturday</option>
                 <option value='Sunday'>Sunday</option>
             </select>
-        {/* замапь селекты, а */}
+{/* замапь селекты, а */}
             <select className='select' value={month} onChange={onSelectMonth} >
                 <option value='01'>January</option>
                 <option value='02'>February</option>
