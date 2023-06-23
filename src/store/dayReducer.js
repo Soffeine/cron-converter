@@ -1,6 +1,6 @@
 const defaultState = {
-    selectedDay: '',
-    cronValue: '',
+   day: '',
+   cronValue: '',
 }
 
 const SELECT_DAY = 'SELECT_DAY';
@@ -8,14 +8,11 @@ const SELECT_DAY = 'SELECT_DAY';
 export const dayReducer = (state = defaultState, action) => {
     switch (action.type) {
         case SELECT_DAY:
-
-            const day = action.payload;
-            const cronResult = convertToCronValue(day);
             return {
                 ...state,
-                selectedDay: day,
-                cronValue: cronResult,
-            }
+                day: action.payload,
+                cronValue: convertToCronValue(action.payload),
+            };
 
         default:
             return state;
@@ -23,6 +20,7 @@ export const dayReducer = (state = defaultState, action) => {
 }
 
 const convertToCronValue = (day) => {
+
 
     const daysInCron = {
         Monday: '1',
@@ -38,4 +36,4 @@ const convertToCronValue = (day) => {
     return cronValue;
 };
 
-export const selectWeekDay = (payload) => ({type: SELECT_DAY, payload})
+export const selectDayAction = (payload) => ({ type: SELECT_DAY, payload })

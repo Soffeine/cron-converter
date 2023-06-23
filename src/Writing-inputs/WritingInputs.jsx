@@ -1,21 +1,25 @@
 import "./WritingInputs.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectWeekDay } from "../store/dayReducer";
+import { selectDayAction } from "../store/dayReducer";
+// import { useEffect } from "react";
 
-function WritingInputs( { time, timeInterval, onTimeChange, onTimeIntervalChange }) {
+function WritingInputs({ time, timeInterval, onTimeChange, onTimeIntervalChange }) {
 
     const dispatch = useDispatch();
 
-    const day = useSelector(state => state.day);
-    const cronValue = useSelector(state => state.cronValue);
-
-    const selectWDay = (day) => {
-        dispatch(selectWeekDay(day));
+    const day = useSelector(state => state.day.day);
+    
+    const selectDay = (e) => {
+        const selectedDay = e.target.value
+        dispatch(selectDayAction(selectedDay));
     }
 
+    // useEffect(() => {
+    //     console.log(cronValue);
+    // }, [cronValue]);
     return (
         <div className='writing-inputs'>
-            <select className='select' value={day} onChange={selectWDay} >
+            <select className='select' value={day} onChange={selectDay} >
                 <option value='Monday'>Monday</option>
                 <option value='Tuesday'>Tuesday</option>
                 <option value='Wednesday'>Wednesday</option>
@@ -24,7 +28,6 @@ function WritingInputs( { time, timeInterval, onTimeChange, onTimeIntervalChange
                 <option value='Saturday'>Saturday</option>
                 <option value='Sunday'>Sunday</option>
             </select>
-            <p>{day}</p>
             <div className='time-setter'>
                 <label className='label time-label'>
                     At
@@ -40,5 +43,5 @@ function WritingInputs( { time, timeInterval, onTimeChange, onTimeIntervalChange
         </div>
     )
 }
-  
-  export default WritingInputs;
+
+export default WritingInputs;
