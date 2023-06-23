@@ -11,16 +11,18 @@ function Form() {
 
     const intervalCron = useSelector(state => state.interval.cronValue);
     const timeCron = useSelector(state => state.time.cronValue);
+    const date = useSelector(state => state.date.date);
+    const monthCron = useSelector(state => state.month.cronValue);
+    const dayCron = useSelector(state => state.day.cronValue);
 
-    const compiledCronValue = `${intervalCron} ${timeCron}`;
+    const compiledCronValue = `${intervalCron} ${timeCron} ${date} ${monthCron} ${dayCron}`;
 
 
-    //  done  done 
+    //  done  done  done   done    done
     //   *      *    *      *        *
     // минуты часы  день  месяц  день-недели 
 
     const onSave = () => {
-        console.log(intervalCron);
         setCronValue(compiledCronValue);
     };
 

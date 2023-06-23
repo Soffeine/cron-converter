@@ -4,6 +4,7 @@ import { periodReducer } from "./periodReducer";
 import { intervalReducer } from "./intervalReducer";
 import { timeReducer } from "./timeReducer";
 import { monthReducer } from "./monthReducer";
+import { dateReducer } from "./dateReducer";
 
 
 const rootReducer = combineReducers({
@@ -12,7 +13,7 @@ const rootReducer = combineReducers({
     period: periodReducer,
     time: timeReducer,
     interval: intervalReducer,
-    
+    date: dateReducer,
 })
 
 export const store = createStore(rootReducer);

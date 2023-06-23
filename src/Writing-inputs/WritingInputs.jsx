@@ -4,11 +4,13 @@ import { selectDayAction } from "../store/dayReducer";
 import { setIntervalAction } from "../store/intervalReducer";
 import { setTimeAction } from "../store/timeReducer";
 import { selectMonthAction } from "../store/monthReducer";
+import { setDateAction } from "../store/dateReducer";
 
 function WritingInputs() {
 
     const dispatch = useDispatch();
 
+    const date = useSelector(state => state.date.date);
     const month = useSelector(state => state.month.month);
     const day = useSelector(state => state.day.day);
     const interval = useSelector(state => state.interval.interval);
@@ -34,12 +36,20 @@ function WritingInputs() {
     const onTimeChange = (e) => {
         const newTime = e.target.value;
         dispatch(setTimeAction(newTime));
-        console.log(newTime);
     }
 
-    // распилить все на переиспользуемые компоненты, а то чо это такое
+    const onDateChange = (e) => {
+        const date = e.target.value;
+        dispatch(setDateAction(date));
+    }
+
+
+    
     return (
         <div className='writing-inputs'>
+
+            <input type="number" defaultValue={date} onChange={onDateChange} className="input" />
+
             <select className='select' value={day} onChange={onSelectDay} >
                 <option value='Monday'>Monday</option>
                 <option value='Tuesday'>Tuesday</option>
@@ -49,7 +59,7 @@ function WritingInputs() {
                 <option value='Saturday'>Saturday</option>
                 <option value='Sunday'>Sunday</option>
             </select>
-{/* замапь селекты, а */}
+
             <select className='select' value={month} onChange={onSelectMonth} >
                 <option value='01'>January</option>
                 <option value='02'>February</option>
