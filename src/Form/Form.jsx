@@ -7,7 +7,6 @@ import ButtonsContainer from "../Buttons/ButtonsContainer";
 function Form() {
     const [period, setPeriod] = useState('');
     const [time, setTime] = useState('');
-    const [timeInterval, setTimeInterval] = useState(null);
     const [cronValue, setCronValue] = useState('');
 
      // изменение значения периода времени
@@ -59,12 +58,10 @@ function Form() {
     return (
         <form className='form'>
             <div className='fields'>
-                <RadioContainer onPeriodChange={onPeriodChange} />
+                <RadioContainer />
                 <WritingInputs 
                 time={time}
-                timeInterval={timeInterval}
-                onTimeChange={onTimeChange}
-                onTimeIntevalChange={onTimeIntervalChange} />
+                onTimeChange={onTimeChange} />
             </div>
             <ButtonsContainer />
             <input type='text' value={cronValue} className='input cron-input' onChange={(e) => setCronValue(e.target.value)} />
