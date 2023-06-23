@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from "redux";
 import { dayReducer } from "./dayReducer";
 import { periodReducer } from "./periodReducer";
-import { intervalReducer } from "./intevalReducer";
+import { intervalReducer } from "./intervalReducer";
 import { timeReducer } from "./timeReducer";
 import { monthReducer } from "./monthReducer";
 

@@ -1,10 +1,10 @@
 import "./ButtonsContainer.css"
 
-function ButtonsContainer() {
+function ButtonsContainer({onSave}) {
     return (
         <div className='buttons'>
             <button type='button' className='button'>Load</button>
-            <button type='submit' className='button'>Save</button>
+            <button type='button' onClick={onSave} className='button'>Save</button>
         </div>
     )
 }

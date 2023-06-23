@@ -1,14 +1,12 @@
 import { setPeriodAction } from "../store/periodReducer";
 import "./RadioContainer.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 
 
 function RadioContainer() {
 
     const dispatch = useDispatch();
-    const period = useSelector(state => state.period.period);
-
 
     const onPeriodChange = (e) => {
         const period = e.target.value;

@@ -1,10 +1,9 @@
 import "./WritingInputs.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectDayAction } from "../store/dayReducer";
-import { setIntervalAction } from "../store/intevalReducer";
+import { setIntervalAction } from "../store/intervalReducer";
 import { setTimeAction } from "../store/timeReducer";
 import { selectMonthAction } from "../store/monthReducer";
-// import { useEffect } from "react";
 
 function WritingInputs() {
 

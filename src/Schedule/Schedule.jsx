@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './Schedule.css';
 import Form from '../Form/Form';
 
