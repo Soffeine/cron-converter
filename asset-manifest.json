@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cron-converter/static/css/main.6a4f5300.css",
+    "main.js": "/cron-converter/static/js/main.d6b9430c.js",
+    "static/js/787.0c3f432a.chunk.js": "/cron-converter/static/js/787.0c3f432a.chunk.js",
+    "index.html": "/cron-converter/index.html",
+    "main.6a4f5300.css.map": "/cron-converter/static/css/main.6a4f5300.css.map",
+    "main.d6b9430c.js.map": "/cron-converter/static/js/main.d6b9430c.js.map",
+    "787.0c3f432a.chunk.js.map": "/cron-converter/static/js/787.0c3f432a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a4f5300.css",
+    "static/js/main.d6b9430c.js"
+  ]
+}
