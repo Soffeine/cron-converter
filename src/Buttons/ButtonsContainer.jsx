@@ -1,10 +1,11 @@
+import Button from "../Button/Button";
 import "./ButtonsContainer.css"
 
-function ButtonsContainer({onSave, onLoad}) {
+function ButtonsContainer({ onSave, onLoad }) {
     return (
         <div className='buttons'>
-            <button type='button' onClick={onLoad} className='button'>Load</button>
-            <button type='button' onClick={onSave} className='button'>Save</button>
+            <Button name="Load" onClick={onLoad} />
+            <Button name="Save" onClick={onSave} />
         </div>
     )
 }
