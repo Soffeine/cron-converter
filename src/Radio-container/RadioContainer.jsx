@@ -1,36 +1,15 @@
-import { setPeriodAction } from "../store/periodReducer";
+import RadioInput from "../RadioInput/RadioInput";
 import "./RadioContainer.css";
-import { useDispatch } from "react-redux";
 
 
-
-function RadioContainer(isDisabled) {
-
-    const dispatch = useDispatch();
-
-    const onPeriodChange = (e) => {
-        const period = e.target.value;
-        dispatch(setPeriodAction(period));
-    };
+function RadioContainer() {
 
     return (
         <div className='radio-inputs'>
-            <label className='label'>
-                <input type='radio' name='choice' value="monthly" id="monthly" onChange={onPeriodChange} />
-                Monthly
-            </label>
-            <label className='label'>
-                <input type='radio' name='choice' value="weekly" id="weekly" onChange={onPeriodChange} />
-                Weekly
-            </label>
-            <label className='label'>
-                <input type='radio' name='choice' value="daily" id="daily" onChange={onPeriodChange} />
-                Daily
-            </label>
-            <label className='label'>
-                <input type='radio' name='choice' value="custom" id="custom" className='checkbox' onChange={onPeriodChange} />
-                Custom
-            </label>
+            <RadioInput periodValue="Monthly" />
+            <RadioInput periodValue="Weekly" />
+            <RadioInput periodValue="Daily" />
+            <RadioInput periodValue="Custom" />
         </div>
     )
 };
