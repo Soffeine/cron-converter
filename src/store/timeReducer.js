@@ -1,9 +1,10 @@
 const defaultState = {
     time: '',
-    cronValue: ''
+    cronValue: '* *'
 }
 
 const SET_TIME = 'SET_TIME';
+const RESET_TIME = 'RESET_TIME';
 
 export const timeReducer = (state = defaultState, action) => {
     switch (action.type) {
@@ -13,6 +14,12 @@ export const timeReducer = (state = defaultState, action) => {
                 time: action.payload,
                 cronValue: convertTimeToCron(action.payload),
             }
+        case RESET_TIME:
+            return {
+                ...state,
+                time: '',
+                cronValue: '* *'
+            }
 
         default:
             return state;
@@ -21,9 +28,9 @@ export const timeReducer = (state = defaultState, action) => {
 
 const convertTimeToCron = (time) => {
     const [hours, minutes] = time.split(':');
-    console.log( `${minutes} ${hours} ***`)
     return `${minutes} ${hours}`
-    
+
 }
 
 export const setTimeAction = (payload) => ({ type: SET_TIME, payload });
+export const resetTimeAction = (payload) => ({ type: RESET_TIME, payload });

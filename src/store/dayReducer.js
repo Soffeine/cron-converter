@@ -1,9 +1,10 @@
 const defaultState = {
     day: '',
-    cronValue: '',
+    cronValue: '*',
 }
 
 const SELECT_DAY = 'SELECT_DAY';
+const RESET_DAY = 'RESET_DAY'
 
 
 export const dayReducer = (state = defaultState, action) => {
@@ -14,6 +15,12 @@ export const dayReducer = (state = defaultState, action) => {
                 day: action.payload,
                 cronValue: convertDayToCron(action.payload),
             };
+        case RESET_DAY:
+            return {
+                ...state,
+                day: '',
+                cronValue: '*',
+            }
 
         default:
             return state;
@@ -38,3 +45,4 @@ const convertDayToCron = (day) => {
 };
 
 export const selectDayAction = (payload) => ({ type: SELECT_DAY, payload });
+export const resetDayAction = (payload) => ({type: RESET_DAY, payload})

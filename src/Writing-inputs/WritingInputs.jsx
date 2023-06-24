@@ -10,6 +10,7 @@ function WritingInputs() {
 
     const dispatch = useDispatch();
 
+    const period = useSelector(state => state.period.period);
     const date = useSelector(state => state.date.date);
     const month = useSelector(state => state.month.month);
     const day = useSelector(state => state.day.day);
@@ -19,7 +20,6 @@ function WritingInputs() {
     const onSelectMonth = (e) => {
         const selectedMonth = e.target.value;
         dispatch(selectMonthAction(selectedMonth))
-        console.log(selectedMonth)
     }
     
     const onSelectDay = (e) => {
@@ -30,7 +30,6 @@ function WritingInputs() {
     const onSetInterval = (e) => {
         const newInterval = e.target.value;
         dispatch(setIntervalAction(newInterval));
-        console.log(newInterval);
     }
 
     const onTimeChange = (e) => {
@@ -39,8 +38,9 @@ function WritingInputs() {
     }
 
     const onDateChange = (e) => {
-        const date = e.target.value;
-        dispatch(setDateAction(date));
+        const newDate = e.target.value;
+        dispatch(setDateAction(newDate));
+        console.log(date)
     }
 
 
@@ -48,9 +48,9 @@ function WritingInputs() {
     return (
         <div className='writing-inputs'>
 
-            <input type="number" defaultValue={date} onChange={onDateChange} className="input" />
+            <input type="number" defaultValue={date} onChange={onDateChange} className="input" disabled={period !== 'monthly' && period !== 'custom'} />
 
-            <select className='select' value={day} onChange={onSelectDay} >
+            <select className='select' value={day} onChange={onSelectDay} disabled={period !== 'weekly'} >
                 <option value='Monday'>Monday</option>
                 <option value='Tuesday'>Tuesday</option>
                 <option value='Wednesday'>Wednesday</option>
@@ -60,7 +60,7 @@ function WritingInputs() {
                 <option value='Sunday'>Sunday</option>
             </select>
 
-            <select className='select' value={month} onChange={onSelectMonth} >
+            <select className='select' value={month} onChange={onSelectMonth} disabled={period !== 'custom'} >
                 <option value='01'>January</option>
                 <option value='02'>February</option>
                 <option value='03'>March</option>

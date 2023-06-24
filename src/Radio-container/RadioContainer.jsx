@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 
 
-function RadioContainer() {
+function RadioContainer(isDisabled) {
 
     const dispatch = useDispatch();
 

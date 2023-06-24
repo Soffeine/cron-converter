@@ -1,9 +1,10 @@
 const defaultState = {
     month: '',
-    cronValue: '',
+    cronValue: '*',
 };
 
 const SELECT_MONTH = 'SELECT_MONTH';
+const RESET_MONTH = 'RESET_MONTH'
 
 export const monthReducer = (state = defaultState, action) => {
     switch (action.type) {
@@ -12,6 +13,12 @@ export const monthReducer = (state = defaultState, action) => {
                 ...state,
                 month: action.payload,
                 cronValue: convertMonthToCron(action.payload),
+            }
+        case RESET_MONTH:
+            return {
+                ...state,
+                month: '',
+                cronValue: '*',
             }
         default:
             return state;
@@ -38,3 +45,4 @@ const convertMonthToCron = (month) => {
 }
 
 export const selectMonthAction = (payload) => ({ type: SELECT_MONTH, payload });
+export const resetMonthAction = (payload) => ({ type: RESET_MONTH, payload });

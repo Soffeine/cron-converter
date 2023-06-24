@@ -4,7 +4,7 @@ const defaultState = {
 }
 
 const SET_INTERVAL = 'SET_INTERVAL';
-const CONVERT_INTERVAL_TO_CRON = 'CONVERT_INTERVAL_TO_CRON';
+const RESET_INTERVAL = 'RESET_INTERVAL'
 
 export const intervalReducer = (state = defaultState, action) => {
     switch (action.type) {
@@ -14,6 +14,12 @@ export const intervalReducer = (state = defaultState, action) => {
                 interval: action.payload,
                 cronValue: convertIntervalToCron(action.payload),
             }
+        case RESET_INTERVAL:
+            return {
+                ...state,
+                interval: '',
+                cronValue: '',
+            }
 
         default:
             return state;
@@ -21,10 +27,8 @@ export const intervalReducer = (state = defaultState, action) => {
 };
 
 const convertIntervalToCron = (interval) => {
-    // const minutes = `*/${interval}`;
-
     return `*/${interval}`;
 }
 
 export const setIntervalAction = (payload) => ({ type: SET_INTERVAL, payload });
-export const convertIntervalAction = (payload) => ({type: CONVERT_INTERVAL_TO_CRON, payload})
+export const resetIntervalAction = (payload) => ({ type: RESET_INTERVAL, payload });
